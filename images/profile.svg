@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-labelledby="title">
+<title id="title">Abstract player profile illustration</title>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#182d44"/><stop offset="1" stop-color="#090f1c"/></linearGradient><linearGradient id="coat" x2="1" y2="1"><stop stop-color="#273f5a"/><stop offset="1" stop-color="#101b2c"/></linearGradient><radialGradient id="aura"><stop stop-color="#53f3e6" stop-opacity=".25"/><stop offset="1" stop-color="#53f3e6" stop-opacity="0"/></radialGradient></defs>
+<rect width="600" height="750" fill="url(#bg)"/><circle cx="300" cy="330" r="255" fill="url(#aura)"/>
+<g fill="none" stroke="#53f3e6" stroke-opacity=".25"><path d="M0 120H600M0 240H600M0 360H600M0 480H600M0 600H600M100 0V750M200 0V750M300 0V750M400 0V750M500 0V750"/><circle cx="300" cy="295" r="185"/><circle cx="300" cy="295" r="210" stroke-dasharray="4 14"/></g>
+<path d="M118 750Q123 544 230 492L300 520L370 492Q477 544 482 750Z" fill="url(#coat)" stroke="#53f3e6" stroke-opacity=".7" stroke-width="3"/>
+<path d="M245 445L245 520L300 565L355 520L355 445Z" fill="#d2ad98"/><path d="M205 276Q210 137 300 137Q390 137 395 276L379 383Q350 445 300 445Q250 445 221 383Z" fill="#cfab97" stroke="#f1d0bb" stroke-opacity=".5" stroke-width="2"/>
+<path d="M205 285Q185 166 273 129Q360 101 396 202L394 268Q360 243 337 207Q282 243 205 245Z" fill="#111b2b"/><path d="M206 277Q245 243 260 220Q306 248 392 226L393 270Q348 264 319 249Q268 282 206 285Z" fill="#1d3147"/>
+<path d="M237 312L276 312M324 312L363 312" stroke="#0b1422" stroke-width="7" stroke-linecap="round"/><path d="M282 365Q300 374 318 365" fill="none" stroke="#815f59" stroke-width="4" stroke-linecap="round"/>
+<path d="M253 495L300 552L347 495L370 514L332 604H268L230 514Z" fill="#0e1725" stroke="#53f3e6" stroke-opacity=".6" stroke-width="2"/><path d="M300 553V671M270 615H330" stroke="#53f3e6" stroke-opacity=".4" stroke-width="2"/>
+<path d="M40 40H135M40 40V135M560 40H465M560 40V135M40 710H135M40 710V615M560 710H465M560 710V615" fill="none" stroke="#53f3e6" stroke-width="4"/>
+<text x="300" y="690" text-anchor="middle" font-family="monospace" font-size="15" letter-spacing="4" fill="#53f3e6">PLAYER PROFILE</text>
+</svg>

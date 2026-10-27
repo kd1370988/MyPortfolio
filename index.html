@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d16">
+  <meta name="description" content="ゲームプログラマーのポートフォリオサイト。制作作品、スキル、プロフィールを紹介します。">
+  <title>PORTFOLIO // GAME DEVELOPER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="ページ上部へ">
+      <span class="logo-mark">◆</span><span>RYO<span class="accent">.DEV</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+      <a href="#about">ABOUT <span>自己紹介</span></a>
+      <a href="#works">WORKS <span>制作作品</span></a>
+      <a href="#skills">SKILLS <span>スキル</span></a>
+      <a href="#contact">CONTACT <span>連絡先</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> GAME PROGRAMMER / PORTFOLIO</p>
+        <h1 id="hero-title">IDEAS INTO<br><span class="gradient-text">INTERACTIVE</span><br>WORLDS<span class="title-period">.</span></h1>
+        <p class="hero-lead">遊びの仕組みを考え、コードで世界をつくる。</p>
+        <p class="hero-description">ゲームプログラマーを目指して、ゲームエンジンやゲームシステムの開発に取り組んでいます。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#works">制作作品を見る <span aria-hidden="true">↘</span></a>
+          <a class="button button-ghost" href="#about">プロフィール <span aria-hidden="true">＋</span></a>
+        </div>
+        <div class="hero-meta">
+          <div><span class="meta-label">FOCUS</span><strong>GAME / ENGINE</strong></div>
+          <div><span class="meta-label">STYLE</span><strong>BUILD · TEST · REPEAT</strong></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="ゲーム開発をイメージしたビジュアル">
+        <div class="visual-frame frame-back"></div>
+        <div class="visual-frame frame-front">
+          <img src="images/hero-scene.svg" alt="暗いSF通路をイメージしたサンプルビジュアル">
+          <div class="hud hud-top"><span>SYS.ONLINE</span><span class="hud-bars"><i></i><i></i><i></i><i></i></span></div>
+          <div class="hud hud-bottom"><span>WORLD_BUILD_001</span><span>● REC</span></div>
+          <div class="crosshair" aria-hidden="true"><i></i><b></b></div>
+        </div>
+        <div class="floating-tag tag-top">C++ <span>◆</span></div>
+        <div class="floating-tag tag-bottom"><span class="status-dot"></span> CREATING NEW WORLDS</div>
+        <span class="visual-index">01 / 04</span>
+      </div>
+      <a class="scroll-cue" href="#about"><span class="scroll-line"></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="section section-shell" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="section-kicker">01 — ABOUT ME</p>
+        <h2 id="about-title">自己紹介<span class="heading-en">WHO I AM</span></h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-image-wrap">
+          <img src="images/profile.svg" alt="プロフィール用のサンプル画像">
+          <div class="image-corner corner-tl"></div><div class="image-corner corner-br"></div>
+          <span class="image-caption">PLAYER PROFILE / 001</span>
+        </div>
+        <div class="about-content">
+          <p class="about-name">安田 羚弥 <span>RYO YASUDA</span></p>
+          <p class="about-role"><span class="status-dot"></span> ASPIRING GAME PROGRAMMER</p>
+          <p>ゲームを遊ぶだけでなく、「どういう仕組みで動いているのか」を考え、実際に形にすることが好きです。</p>
+          <p>現在はC++を中心に、自作ゲームエンジンの開発や3Dゲームの制作に取り組んでいます。描画・ゲームロジック・敵AIなど、幅広い仕組みを自分で実装しながら、遊びやすさと技術の両方を磨いています。</p>
+          <div class="about-facts">
+            <div><span>INTEREST</span><strong>ゲームエンジン / 3Dゲーム</strong></div>
+            <div><span>STRENGTH</span><strong>試行錯誤し、原因を調べて改善すること</strong></div>
+            <div><span>GOAL</span><strong>遊びの体験を技術で支える開発者</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell works-section" id="works" aria-labelledby="works-title">
+      <div class="section-heading heading-row">
+        <div><p class="section-kicker">02 — SELECTED PROJECTS</p><h2 id="works-title">制作作品<span class="heading-en">FEATURED WORKS</span></h2></div>
+        <p class="heading-note">試作から実装・改善まで。<br>制作した作品や技術的な取り組みを紹介します。</p>
+      </div>
+      <div class="works-grid">
+        <article class="work-card work-card-featured">
+          <a class="work-image" href="#contact" aria-label="ステルスアクションゲームについて問い合わせる"><img src="images/project-stealth.svg" alt="ステルスアクションゲームのサンプル画像"><span class="work-number">PROJECT_01</span><span class="work-open" aria-hidden="true">↗</span></a>
+          <div class="work-info"><div class="work-tags"><span>3D GAME</span><span>C++</span><span>DIRECTX 12</span></div><h3>STEALTH ESCAPE <span>ステルス脱出ゲーム</span></h3><p>敵の視覚・聴覚を避けながら、アイテムを集めて脱出を目指す3Dステルスゲーム。</p><div class="work-footer"><span>ROLE / PROGRAMMING</span><span>01 — 03</span></div></div>
+        </article>
+        <article class="work-card">
+          <a class="work-image" href="#contact" aria-label="自作ゲームエンジンについて問い合わせる"><img src="images/project-engine.svg" alt="ゲームエンジンのサンプル画像"><span class="work-number">PROJECT_02</span><span class="work-open" aria-hidden="true">↗</span></a>
+          <div class="work-info"><div class="work-tags"><span>ENGINE</span><span>C++</span><span>DX12</span></div><h3>GAME ENGINE <span>自作ゲームエンジン</span></h3><p>描画・シーン管理・リソース管理など、ゲーム制作を支える基盤を開発。</p><div class="work-footer"><span>ROLE / ENGINEERING</span><span>02 — 03</span></div></div>
+        </article>
+        <article class="work-card">
+          <a class="work-image" href="#contact" aria-label="オーディオシステムについて問い合わせる"><img src="images/project-audio.svg" alt="オーディオシステムのサンプル画像"><span class="work-number">PROJECT_03</span><span class="work-open" aria-hidden="true">↗</span></a>
+          <div class="work-info"><div class="work-tags"><span>AUDIO</span><span>HLSL</span><span>AI</span></div><h3>AUDIO AWARENESS <span>音響・敵AIシステム</span></h3><p>音の伝わり方を利用し、プレイヤーの行動音に敵が反応する仕組みを実装。</p><div class="work-footer"><span>ROLE / SYSTEM DESIGN</span><span>03 — 03</span></div></div>
+        </article>
+      </div>
+      <p class="section-footnote"><span>※</span> 作品名・説明・画像は仮の内容です。実際の作品情報に合わせて変更してください。</p>
+    </section>
+
+    <section class="section section-shell skills-section" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <p class="section-kicker">03 — LOADOUT</p>
+        <h2 id="skills-title">スキル<span class="heading-en">TOOLS & TECHNOLOGY</span></h2>
+      </div>
+      <div class="skills-layout">
+        <div class="skills-intro"><span class="big-bracket">{ }</span><h3>MY TECH<br>LOADOUT</h3><p>学習・制作を通して、実際に手を動かしながら身につけている技術です。</p></div>
+        <div class="skill-list">
+          <div class="skill-item"><div class="skill-top"><div><span class="skill-code">01</span><h3>C++</h3></div><span class="skill-type">PROGRAMMING</span></div><p>ゲームロジック / オブジェクト指向 / メモリ・リソース管理</p><div class="skill-meter"><span style="--level: 82%"></span></div></div>
+          <div class="skill-item"><div class="skill-top"><div><span class="skill-code">02</span><h3>DirectX 12</h3></div><span class="skill-type">GRAPHICS</span></div><p>レンダリングパイプライン / シェーダー / GPUリソース管理</p><div class="skill-meter"><span style="--level: 70%"></span></div></div>
+          <div class="skill-item"><div class="skill-top"><div><span class="skill-code">03</span><h3>HLSL</h3></div><span class="skill-type">SHADER</span></div><p>頂点・ピクセルシェーダー / コンピュートシェーダー</p><div class="skill-meter"><span style="--level: 62%"></span></div></div>
+          <div class="skill-item"><div class="skill-top"><div><span class="skill-code">04</span><h3>Blender</h3></div><span class="skill-type">3D WORKFLOW</span></div><p>モデル・アニメーションの調整 / GLBアセットの取り扱い</p><div class="skill-meter"><span style="--level: 58%"></span></div></div>
+          <p class="skill-disclaimer">※ バーは自己評価の仮表示です。実際の習熟度に合わせて調整してください。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section-shell" id="contact" aria-labelledby="contact-title">
+      <div class="contact-panel">
+        <div class="contact-grid" aria-hidden="true"></div>
+        <p class="section-kicker">04 — NEXT TRANSMISSION</p>
+        <h2 id="contact-title">LET'S BUILD<br><span class="gradient-text">SOMETHING</span><br>GREAT<span class="title-period">.</span></h2>
+        <p>ご覧いただきありがとうございます。<br>ご連絡は下記のメールアドレスまでお願いいたします。</p>
+        <a class="button button-primary contact-button" href="mailto:your.email@example.com">メールで連絡する <span aria-hidden="true">↗</span></a>
+        <p class="contact-placeholder">※ your.email@example.com を自分のメールアドレスに変更してください。</p>
+        <div class="contact-side-label">OPEN CHANNEL / 04</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell"><a class="logo" href="#top"><span class="logo-mark">◆</span><span>RYO<span class="accent">.DEV</span></span></a><p>DESIGNED & BUILT WITH CURIOSITY.</p><span>© <span id="current-year">2026</span> RYO YASUDA</span></footer>
+  <button class="back-to-top" type="button" aria-label="ページ上部へ戻る">↑</button>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title">
+<title id="title">Neon science-fiction corridor</title>
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#152c43"/><stop offset="1" stop-color="#030811"/></linearGradient>
+ <linearGradient id="cyan"><stop stop-color="#53f3e6" stop-opacity=".05"/><stop offset=".5" stop-color="#53f3e6" stop-opacity=".8"/><stop offset="1" stop-color="#53f3e6" stop-opacity=".08"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#3edfd8" stop-opacity=".45"/><stop offset="1" stop-color="#3edfd8" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="900" height="700" fill="url(#bg)"/><ellipse cx="450" cy="345" rx="320" ry="280" fill="url(#glow)"/>
+<path d="M0 0H900L625 205H275Z" fill="#122438" stroke="#365870" stroke-width="2"/><path d="M0 700V0L275 205V478Z" fill="#0a1828" stroke="#29485e" stroke-width="3"/><path d="M900 700V0L625 205V478Z" fill="#0a1828" stroke="#29485e" stroke-width="3"/>
+<path d="M275 205H625V478H275Z" fill="#050d18" stroke="#53f3e6" stroke-opacity=".4" stroke-width="3"/>
+<path d="M0 700L275 478H625L900 700Z" fill="#0b1a2b" stroke="#2c5368" stroke-width="3"/>
+<path d="M0 700L450 390L900 700M110 700L450 435L790 700M260 700L450 500L640 700" fill="none" stroke="#2c6c7e" stroke-opacity=".7" stroke-width="2"/>
+<path d="M0 93L275 220M0 210L275 285M0 330L275 350M0 470L275 425M900 93L625 220M900 210L625 285M900 330L625 350M900 470L625 425" fill="none" stroke="#29485e" stroke-width="3"/>
+<path d="M55 32H245L266 45H55Z M655 32H845L845 45H634Z" fill="#53f3e6" opacity=".8"/><path d="M60 90H210M690 90H840" stroke="#6c87ff" stroke-width="4"/>
+<rect x="320" y="252" width="260" height="160" fill="#0c1e2b" stroke="#3daea9" stroke-width="2"/><path d="M338 270H562V393H338Z" fill="#091521" stroke="#31566c"/><path d="M356 285H544M356 300H510M356 315H528" stroke="#53f3e6" stroke-opacity=".5" stroke-width="3"/>
+<circle cx="450" cy="352" r="28" fill="none" stroke="#53f3e6" stroke-width="2"/><circle cx="450" cy="352" r="17" fill="none" stroke="#6c87ff" stroke-width="2"/><circle cx="450" cy="352" r="4" fill="#53f3e6"/><path d="M450 314V339M450 365V390M412 352H437M463 352H488" stroke="#53f3e6" stroke-width="2"/>
+<path d="M35 610H180M720 610H865" stroke="#53f3e6" stroke-width="2" opacity=".7"/><path d="M42 625H125M775 625H858" stroke="#6c87ff" stroke-width="3" opacity=".7"/>
+<g fill="#53f3e6" opacity=".75"><circle cx="135" cy="250" r="3"/><circle cx="748" cy="280" r="3"/><circle cx="205" cy="465" r="2"/><circle cx="695" cy="452" r="2"/></g>
+<rect width="900" height="700" fill="none" stroke="#53f3e6" stroke-opacity=".16" stroke-width="8"/>
+</svg>
