@@ -3,8 +3,56 @@
   const siteNav = document.querySelector('.site-nav');
   const backToTop = document.querySelector('.back-to-top');
   const year = document.querySelector('#current-year');
+  const contactEmail = document.querySelector('#contact-email');
+  const copyEmailButton = document.querySelector('#copy-email-button');
+  const copyEmailStatus = document.querySelector('#contact-copy-status');
+  const gmailContactLink = document.querySelector('#gmail-contact-link');
 
   if (year) year.textContent = String(new Date().getFullYear());
+
+  // HTML内のメールアドレス1か所から、Gmailリンクとコピー機能を設定する。
+  const email = contactEmail ? contactEmail.textContent.trim() : '';
+  if (email && gmailContactLink) {
+    gmailContactLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`;
+  }
+
+  const copyTextToClipboard = async (text) => {
+    // HTTPSなどの安全なコンテキストではClipboard APIを優先する。
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    // file:// でHTMLを直接開いた場合などに備えたフォールバック。
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    textarea.style.pointerEvents = 'none';
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+    const copied = document.execCommand('copy');
+    textarea.remove();
+    if (!copied) throw new Error('Clipboard copy failed');
+  };
+
+  if (copyEmailButton && contactEmail && copyEmailStatus) {
+    copyEmailButton.addEventListener('click', async () => {
+      const address = contactEmail.textContent.trim();
+      try {
+        await copyTextToClipboard(address);
+        copyEmailStatus.textContent = 'コピーしました。メールの宛先欄に貼り付けてください。';
+        copyEmailStatus.classList.remove('is-error');
+        copyEmailStatus.classList.add('is-success');
+      } catch (error) {
+        copyEmailStatus.textContent = `自動コピーできませんでした。メールアドレス「${address}」を選択してコピーしてください。`;
+        copyEmailStatus.classList.remove('is-success');
+        copyEmailStatus.classList.add('is-error');
+      }
+    });
+  }
 
   const closeMenu = () => {
     if (!menuToggle || !siteNav) return;

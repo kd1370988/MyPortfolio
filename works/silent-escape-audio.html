@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d16">
+  <meta name="description" content="Silent Escapeに実装している音響レイトレーシングと敵の聴覚システム。">
+  <title>SILENT ESCAPE AUDIO SYSTEM // REIYA.DEV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="detail.css">
+  <script src="../script.js" defer></script>
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="logo" href="../index.html#top" aria-label="ポートフォリオのトップへ"><span class="logo-mark">◆</span><span>REIYA<span class="accent">.DEV</span></span></a>
+    <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+      <a href="../index.html#about">ABOUT <span>自己紹介</span></a>
+      <a href="../index.html#works">WORKS <span>制作作品</span></a>
+      <a href="../index.html#skills">SKILLS <span>スキル</span></a>
+      <a href="../index.html#contact">CONTACT <span>連絡先</span></a>
+    </nav>
+  </header>
+  <main class="detail-main" id="top">
+    <section class="detail-hero section-shell">
+      <a class="detail-back" href="../index.html#works">← 作品一覧へ戻る</a>
+      <div class="detail-hero-grid">
+        <div>
+          <p class="detail-kicker">GAME SYSTEM / PROJECT_02</p>
+          <h1 class="detail-title">SILENT ESCAPE<br>AUDIO SYSTEM<span class="detail-title-ja">ステルスゲームの音響システム</span></h1>
+          <p class="detail-lead">音の反射・減衰を計算し、プレイヤーが発生させた音を敵の聴覚判定につなげる、Silent Escape内の技術システムです。</p>
+          <ul class="detail-tags"><li>C++</li><li>HLSL</li><li>DirectX 12</li><li>Audio Ray Tracing</li></ul>
+          <div class="hero-actions"><a class="button button-primary" href="../index.html#contact">連絡先を見る <span aria-hidden="true">↘</span></a><a class="button button-ghost" href="../index.html#works">他の作品を見る <span aria-hidden="true">＋</span></a></div>
+        </div>
+        <figure class="detail-hero-image"><img src="../images/SoundRay.png" alt="音響レイトレーシングの可視化画像"><figcaption>PROJECT_02 / AUDIO SYSTEM</figcaption></figure>
+      </div>
+    </section>
+    
+    <section class="detail-section section-shell" aria-labelledby="overview-title">
+      <div class="detail-section-heading"><p class="section-kicker">01 — OVERVIEW</p><h2 id="overview-title">システム概要<span>AUDIO SYSTEM SUMMARY</span></h2></div>
+      <div class="detail-copy"><p>これは独立したゲーム作品ではなく、『Silent Escape』に実装している音響システムです。音源からリスナーまで音が伝わる経路を計算し、直接音だけでなく、壁や床などで反射した音も扱います。</p><p>プレイヤーが発生させた音を敵が聞き、音源の位置などを手がかりに行動できるようにすることで、音の伝わり方をステルスゲームの駆け引きに結び付けています。</p></div>
+      <ul class="detail-list" style="margin-top:22px"><li><strong>使用箇所</strong><span>Silent Escape の聴覚システム</span></li><li><strong>主な使用技術</strong><span>C++ / DirectX 12 / HLSL / Audio Ray Tracing</span></li><li><strong>扱う要素</strong><span>音の反射経路 / 音量の減衰 / 敵の聴覚判定</span></li></ul>
+    </section>
+    <section class="detail-section section-shell" aria-labelledby="features-title">
+      <div class="detail-section-heading"><p class="section-kicker">02 — KEY FEATURES</p><h2 id="features-title">主な処理<span>HOW IT WORKS</span></h2></div>
+      <div class="detail-info-grid"><article class="detail-info-card"><span class="info-number">01 / FEATURE</span><h3>反射経路の追跡</h3><p>レイトレーシングを利用して音の反射経路をレイで追跡し、直接音に加えて反射音を計算する。</p></article><article class="detail-info-card"><span class="info-number">02 / FEATURE</span><h3>距離・素材による減衰</h3><p>伝播距離やマテリアルに設定しているの吸音特性に応じて音量を弱め、聞こえ方に差を付ける。</p></article><article class="detail-info-card"><span class="info-number">03 / FEATURE</span><h3>計算結果の使い方</h3><p>リスナーをコンピュートシェーダーに渡し、GPU側で計算結果を用いて、敵の音の検知やプレイヤーに聞こえる音に反映している。</p></article></div>
+    </section>
+    <section class="detail-section section-shell" aria-labelledby="technical-title">
+      <div class="detail-section-heading"><p class="section-kicker">03 — TECHNICAL NOTES</p><h2 id="technical-title">技術的な工夫<span>IMPLEMENTATION NOTES</span></h2></div>
+      <div class="detail-copy"><p>反射音は経路が長いほど減衰し、表面の吸音特性によっても音量が変化するようにしています。反射回数や音量のしきい値にも上限を設け、微弱な反射を延々と追跡しない構成にしています。</p><p>GPU側で計算した可聴情報をゲーム側へ渡し、ゲーム内の聴覚判定や音の再生につなげています。音響計算だけで終わらせず、敵の反応がプレイヤーの行動に影響することを目指しています。</p></div>
+      <div class="detail-callout"><h3>調整で意識している点</h3><p>反射音が大きすぎると敵が遠くからでも音を検知しやすくなるため、減衰率や反射回数を調整し、聞こえ方とゲームバランスの両立を目指しています。</p></div>
+    </section>
+    <section class="detail-section section-shell" aria-labelledby="next-title">
+      <div class="detail-section-heading"><p class="section-kicker">04 — EXPLORE MORE</p><h2 id="next-title">ほかの作品を見る<span>MORE PROJECTS</span></h2></div>
+      <div class="detail-next-projects"><a href="silent-escape.html">Silent Escape：ゲーム本編<span>PROJECT_01 / 3D STEALTH GAME</span></a><a href="team-roguelike.html">1年次チーム制作：ローグライク<span>PROJECT_03 / TEAM PROJECT</span></a></div>
+      <div class="detail-nav-actions"><a class="button button-primary" href="../index.html#works">作品一覧へ戻る <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer class="site-footer section-shell detail-footer"><a class="logo" href="../index.html#top"><span class="logo-mark">◆</span><span>REIYA<span class="accent">.DEV</span></span></a><p>DESIGNED & BUILT WITH CURIOSITY.</p><span>© <span id="current-year">2026</span> REIYA YASUDA</span></footer>
+  <button class="back-to-top" type="button" aria-label="ページ上部へ戻る">↑</button>
+</body>
+</html>
