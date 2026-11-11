@@ -47,10 +47,20 @@
     </section>
     <section class="detail-section section-shell" aria-labelledby="features-title">
       <div class="detail-section-heading"><p class="section-kicker">02 — KEY FEATURES</p><h2 id="features-title">主な処理<span>HOW IT WORKS</span></h2></div>
-      <div class="detail-info-grid"><article class="detail-info-card"><span class="info-number">01 / FEATURE</span><h3>反射経路の追跡</h3><p>レイトレーシングを利用して音の反射経路をレイで追跡し、直接音に加えて反射音を計算する。</p></article><article class="detail-info-card"><span class="info-number">02 / FEATURE</span><h3>距離・素材による減衰</h3><p>伝播距離やマテリアルに設定しているの吸音特性に応じて音量を弱め、聞こえ方に差を付ける。</p></article><article class="detail-info-card"><span class="info-number">03 / FEATURE</span><h3>計算結果の使い方</h3><p>リスナーをコンピュートシェーダーに渡し、GPU側で計算結果を用いて、敵の音の検知やプレイヤーに聞こえる音に反映している。</p></article></div>
+      <div class="detail-info-grid"><article class="detail-info-card"><span class="info-number">01 / FEATURE</span><h3>反射経路の追跡</h3><p>レイを利用して音の反射経路を追跡し、直接音に加えて反射音を計算する。</p></article><article class="detail-info-card"><span class="info-number">02 / FEATURE</span><h3>距離・素材による減衰</h3><p>伝播距離や表面の吸音特性に応じて音量を弱め、聞こえ方に差を付ける。</p></article><article class="detail-info-card"><span class="info-number">03 / FEATURE</span><h3>敵AIとの連携</h3><p>音源位置や音量などの情報をゲーム側に渡し、敵が音を検知したときの行動につなげる。</p></article></div>
     </section>
+
+    <section class="detail-section section-shell" aria-labelledby="audio-gallery-title">
+      <div class="detail-section-heading"><p class="section-kicker">03 — VISUAL GUIDE</p><h2 id="audio-gallery-title">音響処理のイメージ<span>AUDIO SYSTEM VISUALS</span></h2></div>
+      <div class="detail-gallery-grid">
+        <figure class="detail-gallery-card"><img src="../images/音響レイトレーシング技術解説.png" alt="音源から出た音が壁で反射してリスナーへ届く経路の概念図"><figcaption><strong>音の反射経路</strong><span>直接音と、壁で反射してから届く音の違いを示した概念図。</span></figcaption></figure>
+        <figure class="detail-gallery-card"><img src="../images/音響システム 敵連携フロー.png" alt="音源の発生からレイトレーシング、敵の聴覚判定までの処理フロー"><figcaption><strong>敵の聴覚への連携</strong><span>音の伝播計算で得た結果を敵AIの判断へ渡す処理フローの概念図。</span></figcaption></figure>
+      </div>
+      <p class="detail-note">※ 上の2点は処理の流れを説明する概念図です。実際のデバッグ画面ではありません。</p>
+    </section>
+
     <section class="detail-section section-shell" aria-labelledby="technical-title">
-      <div class="detail-section-heading"><p class="section-kicker">03 — TECHNICAL NOTES</p><h2 id="technical-title">技術的な工夫<span>IMPLEMENTATION NOTES</span></h2></div>
+      <div class="detail-section-heading"><p class="section-kicker">04 — TECHNICAL NOTES</p><h2 id="technical-title">技術的な工夫<span>IMPLEMENTATION NOTES</span></h2></div>
       <div class="detail-copy"><p>
       音響システムでは、GPUを利用したレイトレーシングによって音の反射経路を計算し、
       壁などの表面で反射した音がどの程度聞こえるかを再現しています。
@@ -86,7 +96,7 @@
     </p></div>
     </section>
     <section class="detail-section section-shell" aria-labelledby="next-title">
-      <div class="detail-section-heading"><p class="section-kicker">04 — EXPLORE MORE</p><h2 id="next-title">ほかの作品を見る<span>MORE PROJECTS</span></h2></div>
+      <div class="detail-section-heading"><p class="section-kicker">05 — EXPLORE MORE</p><h2 id="next-title">ほかの作品を見る<span>MORE PROJECTS</span></h2></div>
       <div class="detail-next-projects"><a href="silent-escape.html">Silent Escape：ゲーム本編<span>PROJECT_01 / 3D STEALTH GAME</span></a><a href="team-roguelike.html">1年次チーム制作：ローグライク<span>PROJECT_03 / TEAM PROJECT</span></a></div>
       <div class="detail-nav-actions"><a class="button button-primary" href="../index.html#works">作品一覧へ戻る <span aria-hidden="true">↗</span></a></div>
     </section>

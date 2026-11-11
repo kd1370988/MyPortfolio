@@ -42,15 +42,25 @@
     
     <section class="detail-section section-shell" aria-labelledby="overview-title">
       <div class="detail-section-heading"><p class="section-kicker">01 — OVERVIEW</p><h2 id="overview-title">作品概要<span>PROJECT SUMMARY</span></h2></div>
-      <div class="detail-copy"><p>『Silent Escape』は、敵の追跡から逃れながら目的を達成し、脱出を目指す個人制作の3Dホラー・ステルスゲームです。</p><p>敵はプレイヤーが発生させた音に反応し、追跡をします。敵の位置や行動を考えながら、周囲の環境とアイテムを活用して行動するゲーム体験を目指しています。</p></div>
+      <div class="detail-copy"><p>『Silent Escape』は、敵の追跡から逃れながら目的を達成し、脱出を目指す個人制作の3Dホラー・ステルスゲームです。</p><p>敵はプレイヤーを視認したときだけでなく、プレイヤーが発生させた音にも反応します。敵の位置や行動を考えながら、周囲の環境とアイテムを活用して行動するゲーム体験を目指しています。</p></div>
       <ul class="detail-list" style="margin-top:22px"><li><strong>制作形態</strong><span>個人制作</span></li><li><strong>制作状況</strong><span>開発中</span></li><li><strong>主な使用技術</strong><span>C++ / DirectX 12 / HLSL / Enemy AI</span></li></ul>
     </section>
     <section class="detail-section section-shell" aria-labelledby="features-title">
       <div class="detail-section-heading"><p class="section-kicker">02 — GAME SYSTEMS</p><h2 id="features-title">主な実装<span>KEY FEATURES</span></h2></div>
-      <div class="detail-info-grid"><article class="detail-info-card"><span class="info-number">01 / FEATURE</span><h3>聴覚による索敵</h3><p>プレイヤーが発生させた音を敵が検知し、音源の位置などを手がかりに反応する。</p></article><article class="detail-info-card"><span class="info-number">02 / FEATURE</span><h3>経路探索</h3><p>敵がルートを決める際にマップ上のノード使ってA*アルゴリズムで探索する。</p></article><article class="detail-info-card"><span class="info-number">03 / FEATURE</span><h3>スタングレネード</h3><p>敵を一定時間スタンさせ、追跡を振り切って目的を達成するための隙を作るアイテム。</p></article></div>
+      <div class="detail-info-grid"><article class="detail-info-card"><span class="info-number">01 / FEATURE</span><h3>視覚による索敵</h3><p>視野を狭く設定し、近距離でプレイヤーを視認する仕組みを実装。</p></article><article class="detail-info-card"><span class="info-number">02 / FEATURE</span><h3>聴覚による索敵</h3><p>プレイヤーが発生させた音を敵が検知し、音源の位置などを手がかりに反応する。</p></article><article class="detail-info-card"><span class="info-number">03 / FEATURE</span><h3>スタングレネード</h3><p>敵を一定時間スタンさせ、追跡を振り切って目的を達成するための隙を作るアイテム。</p></article></div>
     </section>
+
+    <section class="detail-section section-shell" aria-labelledby="game-gallery-title">
+      <div class="detail-section-heading"><p class="section-kicker">03 — VISUAL GUIDE</p><h2 id="game-gallery-title">ゲームシステムのイメージ<span>GAMEPLAY SYSTEMS</span></h2></div>
+      <div class="detail-gallery-grid">
+        <figure class="detail-gallery-card"><img src="../images/視覚と聴覚の敵検知ガイド.png" alt="プレイヤーと敵の視覚・聴覚による索敵を示した概念図"><figcaption><strong>視覚・聴覚による索敵</strong><span>敵の視界と、プレイヤーが発生させる音を考慮して行動する仕組みの概念図。</span></figcaption></figure>
+        <figure class="detail-gallery-card"><img src="../images/スタングレネード：距離別スタン時間.png" alt="スタングレネードの効果範囲と敵のスタン状態を示す概念図"><figcaption><strong>スタングレネード</strong><span>グレネードからの距離に応じて、敵を一時的に行動不能にし、追跡を振り切る時間を作るアイテムの概念図。</span></figcaption></figure>
+      </div>
+      <p class="detail-note">※ 上の2点はゲームシステムを説明する概念図です。実際のゲーム画面ではありません。</p>
+    </section>
+
     <section class="detail-section section-shell" aria-labelledby="technical-title">
-      <div class="detail-section-heading"><p class="section-kicker">03 — DEVELOPMENT NOTES</p><h2 id="technical-title">開発で意識していること<span>IMPLEMENTATION NOTES</span></h2></div>
+      <div class="detail-section-heading"><p class="section-kicker">04 — DEVELOPMENT NOTES</p><h2 id="technical-title">開発で意識していること<span>IMPLEMENTATION NOTES</span></h2></div>
       <div class="detail-copy"><p>
     敵AIは状態遷移を用いて管理し、プレイヤーの発見状況や最後に認識した位置など、
     状況に応じて行動を切り替える仕組みを実装しています。
@@ -78,10 +88,13 @@
     自作ゲームエンジンの開発で培った知識を活かし、
     描画・AI・音響といった複数のシステムを連携させることにも取り組んでいます。
   </p></div>
-      <div class="detail-callout"><h3>関連ページ</h3><p>音の反射や減衰を扱う仕組みについては、専用ページ「Silent Escape の音響システム」で紹介しています。</p></div>
+      <div class="detail-callout"><h3>関連ページ</h3><p>
+    音の反射や減衰の計算方法、音響レイトレーシングの実装については、
+    専用ページ「Silent Escape の音響システム」で詳しく紹介しています。
+  </p></div>
     </section>
     <section class="detail-section section-shell" aria-labelledby="next-title">
-      <div class="detail-section-heading"><p class="section-kicker">04 — EXPLORE MORE</p><h2 id="next-title">ほかの作品を見る<span>MORE PROJECTS</span></h2></div>
+      <div class="detail-section-heading"><p class="section-kicker">05 — EXPLORE MORE</p><h2 id="next-title">ほかの作品を見る<span>MORE PROJECTS</span></h2></div>
       <div class="detail-next-projects"><a href="silent-escape-audio.html">Silent Escape の音響システム<span>PROJECT_02 / AUDIO SYSTEM</span></a><a href="team-roguelike.html">1年次チーム制作：ローグライク<span>PROJECT_03 / TEAM PROJECT</span></a></div>
       <div class="detail-nav-actions"><a class="button button-primary" href="../index.html#works">作品一覧へ戻る <span aria-hidden="true">↗</span></a></div>
     </section>
