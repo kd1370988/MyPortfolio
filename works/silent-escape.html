@@ -51,12 +51,38 @@
     </section>
     <section class="detail-section section-shell" aria-labelledby="technical-title">
       <div class="detail-section-heading"><p class="section-kicker">03 — DEVELOPMENT NOTES</p><h2 id="technical-title">開発で意識していること<span>IMPLEMENTATION NOTES</span></h2></div>
-      <div class="detail-copy"><p>敵AIは状態遷移を用いて管理し、プレイヤーを発見しているか、最後に認識した位置を追跡しているかなど、状況に応じて行動を切り替えます。</p><p>また、音響システムをゲームプレイに組み込み、プレイヤーの行動が敵の反応や追跡に影響するように開発しています。</p></div>
+      <div class="detail-copy"><p>
+    敵AIは状態遷移を用いて管理し、プレイヤーの発見状況や最後に認識した位置など、
+    状況に応じて行動を切り替える仕組みを実装しています。
+    プレイヤーを見失った場合も、最後に認識した位置をもとに探索行動へ移行することで、
+    単純に追いかけるだけではない敵の挙動を目指しています。
+  </p>
+
+  <p>
+    また、視覚だけでなく聴覚による索敵を取り入れ、
+    プレイヤーが発生させた音に敵が反応する仕組みを開発しています。
+    音の発生位置や反射音をもとに敵が音源を調査することで、
+    プレイヤーの行動が敵の発見や追跡に影響するゲーム性を目指しています。
+  </p>
+
+  <p>
+    音響システムでは、レイトレーシングを利用して音の反射や減衰を計算し、
+    壁などの障害物が音の伝わり方に与える影響を再現しています。
+    技術を実装するだけでなく、反射音の音量や敵が音を認識する距離なども調整し、
+    プレイヤーが状況を判断しながら行動できるバランスを意識しています。
+  </p>
+
+  <p>
+    開発では、想定どおりに動作しない場合に処理の流れや計算内容を確認し、
+    原因を調査しながら改善を重ねています。
+    自作ゲームエンジンの開発で培った知識を活かし、
+    描画・AI・音響といった複数のシステムを連携させることにも取り組んでいます。
+  </p></div>
       <div class="detail-callout"><h3>関連ページ</h3><p>音の反射や減衰を扱う仕組みについては、専用ページ「Silent Escape の音響システム」で紹介しています。</p></div>
     </section>
     <section class="detail-section section-shell" aria-labelledby="next-title">
       <div class="detail-section-heading"><p class="section-kicker">04 — EXPLORE MORE</p><h2 id="next-title">ほかの作品を見る<span>MORE PROJECTS</span></h2></div>
-      <div class="detail-next-projects"><a href="silent-escape-audio.html">ステルスゲームの音響システム<span>PROJECT_02 / AUDIO SYSTEM</span></a><a href="team-roguelike.html">1年次チーム制作：ローグライク<span>PROJECT_03 / TEAM PROJECT</span></a></div>
+      <div class="detail-next-projects"><a href="silent-escape-audio.html">Silent Escape の音響システム<span>PROJECT_02 / AUDIO SYSTEM</span></a><a href="team-roguelike.html">1年次チーム制作：ローグライク<span>PROJECT_03 / TEAM PROJECT</span></a></div>
       <div class="detail-nav-actions"><a class="button button-primary" href="../index.html#works">作品一覧へ戻る <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
