@@ -109,3 +109,175 @@ h1 { margin-bottom: 25px; font: 800 clamp(42px, 5.7vw, 75px)/1.12 var(--font-dis
 .work-details-link span { display: inline-block; transition: transform .2s ease; }
 .work-details-link:hover span { transform: translateX(4px); }
 .work-details-link:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+
+/* ==============================
+   LIGHT GAME-PORTFOLIO THEME
+   Color-only overrides: layout and interactions remain unchanged.
+   ============================== */
+:root {
+  --bg: #f4f7fb;
+  --panel: #ffffff;
+  --panel-light: #eaf0f7;
+  --text: #1d293b;
+  --muted: #526176;
+  --line: rgba(52, 73, 101, .2);
+  --cyan: #00869a;
+  --blue: #6476df;
+  --purple: #8759c7;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+body::before {
+  background:
+    radial-gradient(ellipse at 82% 4%, rgba(132, 150, 255, .16), transparent 36%),
+    radial-gradient(ellipse at 2% 42%, rgba(44, 207, 202, .12), transparent 34%),
+    #f4f7fb;
+}
+.scanlines {
+  opacity: .025;
+  background: repeating-linear-gradient(to bottom, transparent 0 3px, rgba(52, 73, 101, .12) 4px);
+}
+.site-header { border-bottom-color: rgba(52, 73, 101, .2); }
+.logo-mark { color: var(--cyan); text-shadow: 0 0 12px rgba(0, 134, 154, .22); }
+.site-nav a { color: #26354b; }
+.site-nav a span { color: #68788d; }
+.site-nav a:hover, .site-nav a:focus-visible { color: var(--cyan); }
+.eyebrow, .section-kicker { color: var(--cyan); }
+.status-dot { background: #0aa7ad; box-shadow: 0 0 10px rgba(10, 167, 173, .35); }
+h1, h2, h3, p { color: inherit; }
+.gradient-text {
+  background: linear-gradient(95deg, #008b9e, #6675dc 58%, #8a59c8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-description { color: #536176; }
+.button-primary { color: #fff; background: #078fa2; box-shadow: 0 7px 22px rgba(0, 143, 162, .16); }
+.button-primary:hover { box-shadow: 0 8px 25px rgba(0, 143, 162, .26); }
+.button-ghost { border-color: rgba(62, 86, 116, .32); color: #26364b; background: rgba(255, 255, 255, .86); }
+.meta-label { color: #718097; }
+.hero-visual .frame-front { background: #e4edf5; box-shadow: 0 22px 55px rgba(48, 65, 90, .16); }
+.frame-front::after { background: linear-gradient(135deg, rgba(44, 207, 202, .05), transparent 45%, rgba(108, 135, 255, .12)); border-color: rgba(255, 255, 255, .55); }
+.frame-front img { opacity: .98; }
+.floating-tag { color: #2b3b51; background: rgba(255, 255, 255, .96); border-color: rgba(0, 134, 154, .35); box-shadow: 0 10px 28px rgba(34, 52, 76, .15); }
+.tag-bottom { color: #405168; }
+.visual-index { color: #738198; }
+.scroll-cue { color: #607087; }
+.section-heading h2 { color: #1d293b; }
+.heading-en { color: #75839a; }
+.about-image-wrap { background: linear-gradient(135deg, rgba(0, 166, 174, .12), rgba(108, 135, 255, .08)); border-color: rgba(52, 73, 101, .2); }
+.about-image-wrap img { background: #e8eef5; }
+.image-caption { color: #6b7c92; }
+.about-name span { color: #64748a; }
+.about-role { color: var(--cyan); }
+.about-content > p:not(.about-name):not(.about-role) { color: #526176; }
+.about-facts span { color: #718097; }
+.heading-note { color: #536176; }
+.work-card {
+  background: linear-gradient(150deg, #ffffff, #f8faff);
+  border-color: rgba(52, 73, 101, .18);
+  box-shadow: 0 8px 26px rgba(44, 61, 84, .055);
+}
+.work-card:hover { border-color: rgba(0, 134, 154, .46); box-shadow: 0 13px 32px rgba(44, 61, 84, .1); }
+.work-image { background: #e2eaf3; }
+.work-number { color: #007d90; background: rgba(255, 255, 255, .94); border-color: rgba(0, 134, 154, .45); }
+.work-info h3 { color: #202e42; }
+.work-info h3 span { color: #54657b; }
+.work-info p { color: #536176; }
+.work-tags span { color: #56677e; border-color: rgba(70, 91, 120, .25); background: rgba(255, 255, 255, .45); }
+.work-footer { color: #708097; border-top-color: rgba(52, 73, 101, .16); }
+.section-footnote { color: #697a91; }
+.skills-intro { border-left-color: rgba(0, 134, 154, .5); background: linear-gradient(90deg, rgba(0, 166, 174, .08), rgba(255, 255, 255, .22)); }
+.big-bracket, .skill-code { color: var(--cyan); }
+.skills-intro p, .skill-item p { color: #536176; }
+.skill-type { color: #718097; }
+.skill-meter { background: #dce4ef; }
+.skill-meter span { background: linear-gradient(90deg, #0a9cac, #7584ed); box-shadow: 0 0 10px rgba(0, 134, 154, .2); }
+.skill-disclaimer { color: #697a91; }
+.contact-panel {
+  border-color: rgba(0, 134, 154, .28);
+  background: radial-gradient(ellipse at 82% 30%, rgba(139, 151, 244, .15), transparent 45%), linear-gradient(130deg, #ffffff, #edf3fa 75%);
+  box-shadow: 0 14px 40px rgba(38, 57, 82, .07);
+}
+.contact-panel > p:not(.section-kicker):not(.contact-placeholder) { color: #526176; }
+.contact-email-card { border-color: rgba(0, 134, 154, .24); background: rgba(255, 255, 255, .78); }
+.contact-email-address { color: #25344a; }
+.contact-copy-status { color: #65768c; }
+.contact-copy-status.is-success { color: #007d90; }
+.contact-copy-status.is-error { color: #b43b36; }
+.contact-placeholder { color: #697a91; }
+.contact-side-label { color: #64768e; }
+.site-footer { border-top-color: rgba(52, 73, 101, .2); color: #65768c; }
+.back-to-top { color: #007d90; background: rgba(255, 255, 255, .96); border-color: rgba(0, 134, 154, .42); box-shadow: 0 4px 16px rgba(35, 53, 78, .12); }
+.work-details-link { color: #007d90; border-top-color: rgba(52, 73, 101, .16); }
+
+@media (max-width: 700px) {
+  .site-nav { background: rgba(250, 252, 255, .98); border-bottom-color: rgba(52, 73, 101, .2); box-shadow: 0 14px 26px rgba(34, 52, 76, .08); }
+  .site-nav a { color: #26354b; border-bottom-color: rgba(52, 73, 101, .12); }
+  .menu-toggle { border-color: rgba(52, 73, 101, .28); }
+  .menu-toggle span { background: var(--cyan); }
+}
+
+
+/* ==============================
+   WARM ACCENT PALETTE
+   Warm amber, orange, and coral accents; layout and interactions unchanged.
+   ============================== */
+:root {
+  --cyan: #a85f00;       /* main accent: readable amber */
+  --blue: #df7626;       /* secondary accent: orange */
+  --purple: #c64250;     /* tertiary accent: coral red */
+}
+
+body::before {
+  background:
+    radial-gradient(ellipse at 82% 4%, rgba(245, 183, 65, .15), transparent 36%),
+    radial-gradient(ellipse at 2% 42%, rgba(222, 98, 68, .075), transparent 34%),
+    #f4f7fb;
+}
+::selection { color: #3b2600; background: #f6c453; }
+.logo-mark { color: #b46a00; text-shadow: 0 0 12px rgba(217, 119, 6, .22); }
+.site-nav a:hover, .site-nav a:focus-visible { color: #a85f00; }
+.eyebrow, .section-kicker, .accent, .title-period, .about-role,
+.big-bracket, .skill-code, .work-details-link { color: #a85f00; }
+.status-dot { background: #df7626; box-shadow: 0 0 10px rgba(223, 118, 38, .34); }
+.gradient-text {
+  background: linear-gradient(95deg, #a85f00, #df7626 58%, #c64250);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.button-primary { color: #392500; background: #f6c453; box-shadow: 0 7px 22px rgba(217, 119, 6, .18); }
+.button-primary:hover { box-shadow: 0 8px 25px rgba(217, 119, 6, .28); }
+.visual-frame { border-color: rgba(217, 119, 6, .45); }
+.frame-front::after { background: linear-gradient(135deg, rgba(246, 196, 83, .10), transparent 48%, rgba(198, 66, 80, .10)); border-color: rgba(255, 255, 255, .62); }
+.hud, .hud-bars i { color: #a85f00; }
+.hud-bars i { background: #df7626; }
+.crosshair { border-color: rgba(223, 118, 38, .7); }
+.crosshair::before, .crosshair::after { background: rgba(223, 118, 38, .78); }
+.crosshair i { background: #c64250; }
+.floating-tag { border-color: rgba(217, 119, 6, .38); }
+.tag-top span { color: #a85f00; }
+.scroll-line { background: #df7626; }
+.about-image-wrap { background: linear-gradient(135deg, rgba(246, 196, 83, .22), rgba(198, 66, 80, .07)); border-color: rgba(217, 119, 6, .25); }
+.image-corner { border-color: #df7626; }
+.work-card:hover { border-color: rgba(217, 119, 6, .48); }
+.work-number { color: #a85f00; border-color: rgba(217, 119, 6, .48); }
+.work-tags span { border-color: rgba(171, 104, 28, .22); }
+.skills-intro { border-left-color: rgba(217, 119, 6, .58); background: linear-gradient(90deg, rgba(246, 196, 83, .12), rgba(255, 255, 255, .22)); }
+.skill-meter span { background: linear-gradient(90deg, #f0b52f, #df7626 58%, #c64250); box-shadow: 0 0 10px rgba(217, 119, 6, .22); }
+.contact-panel {
+  border-color: rgba(217, 119, 6, .30);
+  background: radial-gradient(ellipse at 82% 30%, rgba(246, 196, 83, .20), transparent 45%), linear-gradient(130deg, #ffffff, #fff6e7 75%);
+}
+.contact-email-card { border-color: rgba(217, 119, 6, .28); }
+.contact-copy-status.is-success { color: #a85f00; }
+.back-to-top { color: #a85f00; border-color: rgba(217, 119, 6, .42); }
+.work-details-link { color: #a85f00; border-top-color: rgba(217, 119, 6, .20); }
+.work-details-link:hover { color: #c64250; }
+@media (max-width: 700px) {
+  .menu-toggle span { background: #df7626; }
+}
