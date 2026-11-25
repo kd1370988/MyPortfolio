@@ -95,4 +95,41 @@
       window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     });
   }
+
+  // Scroll reveals: keep content visible for reduced-motion users and older browsers.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const revealSelector = [
+      '.section-heading', '.about-image-wrap', '.about-content', '.work-card',
+      '.skills-intro', '.skill-item', '.contact-panel',
+      '.detail-hero-grid', '.detail-section-heading', '.detail-copy', '.detail-list',
+      '.detail-info-card', '.detail-visual-note', '.detail-gallery-card',
+      '.detail-callout', '.detail-next-projects a', '.video-wrapper'
+    ].join(',');
+    const revealTargets = Array.from(document.querySelectorAll(revealSelector));
+
+    if (revealTargets.length) {
+      document.documentElement.classList.add('motion-enabled');
+      revealTargets.forEach((element) => {
+        element.classList.add('motion-reveal');
+        const parent = element.parentElement;
+        const siblings = parent
+          ? Array.from(parent.children).filter((item) => item.matches(revealSelector))
+          : [element];
+        const siblingIndex = Math.max(0, siblings.indexOf(element));
+        element.style.setProperty('--motion-delay', `${Math.min(siblingIndex, 4) * 85}ms`);
+      });
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+
+      revealTargets.forEach((element) => revealObserver.observe(element));
+    }
+  }
 })();
